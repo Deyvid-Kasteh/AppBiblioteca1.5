@@ -9,7 +9,7 @@ export default function DrawerRoutes() {
   return (
     <Drawer.Navigator screenOptions={{
       drawerPosition: 'right',
-      headerShown: false
+      he
     }}>
       <Drawer.Screen name="HomeStart" component={BottomTabRoutes} />
     </Drawer.Navigator>

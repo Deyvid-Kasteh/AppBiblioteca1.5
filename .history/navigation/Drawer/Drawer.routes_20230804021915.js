@@ -8,8 +8,7 @@ const Drawer = createDrawerNavigator();
 export default function DrawerRoutes() {
   return (
     <Drawer.Navigator screenOptions={{
-      drawerPosition: 'right',
-      headerShown: false
+      drawerPosition: ''
     }}>
       <Drawer.Screen name="HomeStart" component={BottomTabRoutes} />
     </Drawer.Navigator>
