@@ -6,24 +6,20 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": {
+      "bundler": "metro"
+    }
   },
   "dependencies": {
-    "@expo/metro-config": "^0.10.7",
     "expo": "~49.0.5",
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
     "react-native": "0.72.3",
-    "react-native-web": "~0.19.6"
+    "react-native-web": "~0.19.6",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
   },
-  "private": true,
-  "expo": {
-    "web": {
-      "bundler": "metro"
-    }
-  }
+  "private": true
 }
