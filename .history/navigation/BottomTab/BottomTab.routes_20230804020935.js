@@ -12,21 +12,7 @@ const Tab = createBottomTabNavigator();
 
 export default function BottomTabRoutes() {
   return (
-    <Tab.Navigator
-      screenOptions={{
-        tabBarShowLabel: false,
-        tabBarStyle: {
-          position: "absolute",
-          bottom: 14,
-          left: 14,
-          right: 14,
-          borderRadius: 15,
-          elevation: 0,
-          height: 60,
-          borderTopWidth: 0,
-        },
-      }}
-    >
+    <Tab.Navigator>
       <Tab.Screen
         name="Home"
         component={Home}
@@ -82,3 +68,5 @@ export default function BottomTabRoutes() {
     </Tab.Navigator>
   );
 }
+
+// <Ionicons name="cart-outline" size={24} color="black" /><Ionicons name="cart-sharp" size={24} color="black" />

@@ -8,25 +8,13 @@ import ShoppingCart from "../../screens/ShoppingCart";
 import { AntDesign } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 
+
+
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabRoutes() {
   return (
-    <Tab.Navigator
-      screenOptions={{
-        tabBarShowLabel: false,
-        tabBarStyle: {
-          position: "absolute",
-          bottom: 14,
-          left: 14,
-          right: 14,
-          borderRadius: 15,
-          elevation: 0,
-          height: 60,
-          borderTopWidth: 0,
-        },
-      }}
-    >
+    <Tab.Navigator>
       <Tab.Screen
         name="Home"
         component={Home}
@@ -66,19 +54,7 @@ export default function BottomTabRoutes() {
           },
         }}
       />
-      <Tab.Screen
-        name="ShoppingCart"
-        component={ShoppingCart}
-        options={{
-          // headerShown: false,
-          tabBarIcon: ({ color, size, focused }) => {
-            if (focused) {
-              return <Ionicons name="cart-sharp" size={size} color={color} />;
-            }
-            return <Ionicons name="cart-outline" size={size} color={color} />;
-          },
-        }}
-      />
+      <Tab.Screen name="ShoppingCart" component={ShoppingCart} />
     </Tab.Navigator>
   );
 }
