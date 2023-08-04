@@ -13,19 +13,19 @@ import { useNavigation } from "@react-navigation/native";
 
 const Tab = createBottomTabNavigator();
 
+
 export default function BottomTabRoutes() {
-  const navigation = useNavigation();
+      const navigation = useNavigation();
 
   return (
     <Tab.Navigator
       screenOptions={{
         headerTitleAlign: "center",
         headerRight: () => (
-          <Pressable onPress={() => navigation.openDrawer()}>
+          <Pressable >
             <Avatar />
           </Pressable>
-              ),
-        // headerStyle: {marginRight: "10"},
+        ),
         tabBarShowLabel: false,
         tabBarStyle: {
           position: "absolute",

@@ -21,11 +21,10 @@ export default function BottomTabRoutes() {
       screenOptions={{
         headerTitleAlign: "center",
         headerRight: () => (
-          <Pressable onPress={() => navigation.openDrawer()}>
+          <Pressable>
             <Avatar />
           </Pressable>
-              ),
-        // headerStyle: {marginRight: "10"},
+        ),
         tabBarShowLabel: false,
         tabBarStyle: {
           position: "absolute",

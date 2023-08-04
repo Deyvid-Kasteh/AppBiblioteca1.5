@@ -1,31 +1,22 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "../../screens/Home";
 import { Pressable } from "react-native";
+import Home from "../../screens/Home";
 import Search from "../../screens/Search";
 import Favorites from "../../screens/Favorites";
 import ShoppingCart from "../../screens/ShoppingCart";
 
 import { AntDesign } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
-import Avatar from "../../assets/Avatar/Avatar";
-import { useNavigation } from "@react-navigation/native";
 
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabRoutes() {
-  const navigation = useNavigation();
-
   return (
     <Tab.Navigator
       screenOptions={{
-        headerTitleAlign: "center",
-        headerRight: () => (
-          <Pressable onPress={() => navigation.openDrawer()}>
-            <Avatar />
-          </Pressable>
-              ),
-        // headerStyle: {marginRight: "10"},
+              headerTitleAlign: "center",
+          headerRight: ()=> (<Pressable></Pressable>),
         tabBarShowLabel: false,
         tabBarStyle: {
           position: "absolute",

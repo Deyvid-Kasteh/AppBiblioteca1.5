@@ -24,8 +24,7 @@ export default function BottomTabRoutes() {
           <Pressable onPress={() => navigation.openDrawer()}>
             <Avatar />
           </Pressable>
-              ),
-        // headerStyle: {marginRight: "10"},
+        ),
         tabBarShowLabel: false,
         tabBarStyle: {
           position: "absolute",

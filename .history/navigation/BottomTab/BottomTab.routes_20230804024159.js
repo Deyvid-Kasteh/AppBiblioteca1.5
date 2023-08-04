@@ -25,7 +25,7 @@ export default function BottomTabRoutes() {
             <Avatar />
           </Pressable>
               ),
-        // headerStyle: {marginRight: "10"},
+        headerStyle
         tabBarShowLabel: false,
         tabBarStyle: {
           position: "absolute",
