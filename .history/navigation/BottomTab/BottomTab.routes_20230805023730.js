@@ -1,5 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Home from "../../screens/Home";
 import { Pressable } from "react-native";
 import Search from "../../screens/Search";
 import Favorites from "../../screens/Favorites";
@@ -9,8 +10,6 @@ import { AntDesign } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import Avatar from "../../assets/Avatar/Avatar";
 import { useNavigation } from "@react-navigation/native";
-import HomeStackRoutes from "../NativeStack/HomeStack.routes";
-import Home from "../../screens/Home";
 
 const Tab = createBottomTabNavigator();
 
@@ -19,14 +18,14 @@ export default function BottomTabRoutes() {
 
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="H"
       screenOptions={{
         headerTitleAlign: "center",
         headerRight: () => (
           <Pressable onPress={() => navigation.openDrawer()}>
             <Avatar />
           </Pressable>
-        ),
+              ),
         // headerStyle: {marginRight: "10"},
         tabBarShowLabel: false,
         tabBarStyle: {
@@ -42,10 +41,10 @@ export default function BottomTabRoutes() {
       }}
     >
       <Tab.Screen
-        name="HomeStackRoutes"
+        name="Home"
         component={Home}
         options={{
-          title: "Biblioteca.",
+          title: 'Biblioteca.',
           tabBarIcon: ({ color, size, focused }) => {
             if (focused) {
               return <Ionicons name="home" size={size} color={color} />;

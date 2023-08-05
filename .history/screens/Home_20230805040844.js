@@ -100,7 +100,7 @@ const Home = () => {
       </View>
       <View style={styles.homePageBooksGender}>
         <View style={styles.homePageBooksTextGender}>
-          <Text style={styles.Bookstext}>Ficção</Text>
+          <Text style={styles.Bookstext}>Ficção teste</Text>
         </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {resultadosLivrosFiccao?.map((livro) => (
@@ -133,7 +133,7 @@ const Home = () => {
       </View>
       <View style={styles.homePageBooksGender}>
         <View style={styles.homePageBooksTextGender}>
-          <Text style={styles.Bookstext}>Romances</Text>
+          <Text style={styles.Bookstext}>Romancesssss</Text>
         </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {resultadosLivrosRomance?.map((livro) => (
@@ -166,7 +166,7 @@ const Home = () => {
       </View>
       <Button
         title="Press me"
-        onPress={() => setLoadHomeBooks(loadHomeBooks+1)}
+        onPress={() => setLoadHomeBooks(++)}
       />
       <View>
         <Text>{loadHomeBooks}</Text>

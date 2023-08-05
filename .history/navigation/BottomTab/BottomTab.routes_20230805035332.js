@@ -10,7 +10,6 @@ import { Ionicons } from "@expo/vector-icons";
 import Avatar from "../../assets/Avatar/Avatar";
 import { useNavigation } from "@react-navigation/native";
 import HomeStackRoutes from "../NativeStack/HomeStack.routes";
-import Home from "../../screens/Home";
 
 const Tab = createBottomTabNavigator();
 

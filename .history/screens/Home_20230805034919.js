@@ -11,63 +11,24 @@ import {
   SafeAreaView,
   Image,
   TouchableOpacity,
-  Button,
-  Alert,
 } from "react-native";
 import { useEffect, useState } from "react";
 
 const Home = () => {
-  const [loadHomeBooks, setLoadHomeBooks] = useState(0);
   const [resultadosLivrosFantasia, setResultadosLivrosFantasia] = useState();
   const [resultadosLivrosFiccao, setResultadosLivrosFiccao] = useState();
   const [resultadosLivrosRomance, setResultadosLivrosRomance] = useState();
   const nomeDoLivroFantasia = "o castelo animado";
   const nomeDeAutorFiccao = "alienista";
-  const nomeDaObraRomance = "a megera";
+  const nomeDaObraRomance = "a megera domada";
 
-  useEffect(() => {
-    fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${nomeDoLivroFantasia}&maxResults=10`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
-      .then((resp) => resp.json())
-      .then((data) => setResultadosLivrosFantasia(data.items));
-
-    fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${nomeDeAutorFiccao}&maxResults=10`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
-      .then((resp) => resp.json())
-      .then((data) => setResultadosLivrosFiccao(data.items));
-
-    fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${nomeDaObraRomance}&maxResults=10`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
-      .then((resp) => resp.json())
-      .then((data) => setResultadosLivrosRomance(data.items));
-  }, [loadHomeBooks]);
+  
 
   return (
     <View style={styles.homePage}>
       <View style={styles.homePageBooksGender}>
         <View style={styles.homePageBooksTextGender}>
-          <Text style={styles.Bookstext}>Fantasias</Text>
+          <Text style={styles.Bookstext}>Fantasia</Text>
         </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {resultadosLivrosFantasia?.map((livro) => (
@@ -133,7 +94,7 @@ const Home = () => {
       </View>
       <View style={styles.homePageBooksGender}>
         <View style={styles.homePageBooksTextGender}>
-          <Text style={styles.Bookstext}>Romances</Text>
+          <Text style={styles.Bookstext}>Romance</Text>
         </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {resultadosLivrosRomance?.map((livro) => (
@@ -163,13 +124,6 @@ const Home = () => {
             </View>
           ))}
         </ScrollView>
-      </View>
-      <Button
-        title="Press me"
-        onPress={() => setLoadHomeBooks(loadHomeBooks+1)}
-      />
-      <View>
-        <Text>{loadHomeBooks}</Text>
       </View>
     </View>
   );
