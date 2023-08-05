@@ -15,6 +15,7 @@ import {
 } from "react-native";
 import { BlurView } from "@react-native-community/blur";
 import { useEffect, useState } from "react";
+import { Ionicons } from "@expo/vector-icons";
 
 const Home = () => {
   const [resultadosLivrosFantasia, setResultadosLivrosFantasia] = useState();
@@ -73,7 +74,14 @@ const Home = () => {
 
 
         <View style={styles.homePage}>
-
+          <View style={styles.homePageView}>
+            <Text style={styles.text}>Biblioteca.</Text>
+            <Ionicons
+              name="md-person-circle-outline"
+              size={50}
+              color="#BFA054"
+            />
+          </View>
           <View style={styles.homePageBooksGender}>
             <View style={styles.homePageBooksTextGender}>
               <Text style={styles.Bookstext}>Fantasia</Text>
@@ -202,7 +210,7 @@ const styles = StyleSheet.create({
   homePage: {
     width: "100%",
     height: "100%",
-    // backgroundColor: "rgba(0, 0, 0, 0.2)", // brilho da imagem
+    backgroundColor: "rgba(0, 0, 0, 0.2)", // brilho da imagem
     // backgroundColor: "rgba(0, 0, 0, 0.4)", // brilho da imagem
 
     alignItems: "center",
@@ -211,7 +219,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   homePageView: {
-    // backgroundColor: "rgba(0, 0, 0, 0.5)", // brilho da imagem
+    backgroundColor: "rgba(0, 0, 0, 0.5)", // brilho da imagem
     // borderRadius: 50,
 
     // borderBottomLeftRadius: 50,
@@ -233,7 +241,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     borderRadius: 10,
     flexDirection: "column",
-    // backgroundColor: "rgba(0, 0, 0, 0.5)", // brilho da imagem
+    backgroundColor: "rgba(0, 0, 0, 0.5)", // brilho da imagem
     padding: 3,
     justifyContent: "flex-start",
     alignItems: "center",
@@ -247,7 +255,7 @@ const styles = StyleSheet.create({
   },
 
   profilePageBooks: { flexDirection: "row", flex: 1 },
-  // Bookstext: { color: "#BFA054", fontSize: 30 },
+  Bookstext: { color: "#BFA054", fontSize: 30 },
 
   homePageBookView: {
     borderWidth: 1,

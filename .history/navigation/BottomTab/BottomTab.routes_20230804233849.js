@@ -43,7 +43,7 @@ export default function BottomTabRoutes() {
         name="Home"
         component={Home}
         options={{
-          title: 'Biblioteca.',
+          title: 'My home',
           tabBarIcon: ({ color, size, focused }) => {
             if (focused) {
               return <Ionicons name="home" size={size} color={color} />;

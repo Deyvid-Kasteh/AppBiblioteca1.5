@@ -1,11 +1,24 @@
-import React from "react";
+// import { StyleSheet, Text, View } from 'react-native'
+// import React from 'react'
+
+// const Home = () => {
+//   return (
+//     <View>
+//       <Text>Home</Text>
+//     </View>
+//   )
+// }
+
+// export default Home
+
+// const styles = StyleSheet.create({})
+
 
 import {
-  StyleSheet,
   Text,
-  View,
   TextInput,
   ImageBackground,
+  View,
   Pressable,
   Keyboard,
   ScrollView,
@@ -14,18 +27,22 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { BlurView } from "@react-native-community/blur";
+import styles from "./homepageStyle";
 import { useEffect, useState } from "react";
 
-const Home = () => {
+import { Ionicons } from "@expo/vector-icons";
+
+export default function HomePage() {
+  const backgroundImage = require("../../img/bibli.jpg");
   const [resultadosLivrosFantasia, setResultadosLivrosFantasia] = useState();
+
   const [resultadosLivrosFiccao, setResultadosLivrosFiccao] = useState();
+
   const [resultadosLivrosRomance, setResultadosLivrosRomance] = useState();
+
   const nomeDoLivroFantasia = "o castelo animado";
   const nomeDeAutorFiccao = "alienista";
   const nomeDaObraRomance = "a megera domada";
-
-
-
 
   useEffect(() => {
     fetch(
@@ -65,15 +82,23 @@ const Home = () => {
       .then((data) => setResultadosLivrosRomance(data.items));
   }, []);
 
-
-
-
-
   return (
-
-
+    <SafeAreaView style={styles.homePageContainer}>
+      <ImageBackground
+        source={backgroundImage}
+        resizeMode="cover"
+        style={styles.image}
+        blurRadius={5}
+      >
         <View style={styles.homePage}>
-
+          <View style={styles.homePageView}>
+            <Text style={styles.text}>Biblioteca.</Text>
+            <Ionicons
+              name="md-person-circle-outline"
+              size={50}
+              color="#BFA054"
+            />
+          </View>
           <View style={styles.homePageBooksGender}>
             <View style={styles.homePageBooksTextGender}>
               <Text style={styles.Bookstext}>Fantasia</Text>
@@ -176,90 +201,7 @@ const Home = () => {
             </ScrollView>
           </View>
         </View>
-
-
+      </ImageBackground>
+    </SafeAreaView>
   );
-};
-
-export default Home;
-
-const styles = StyleSheet.create({
-  image: {
-    flex: 1,
-    justifyContent: "center",
-    width: "100%",
-    height: "100%",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  homePageContainer: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    width: "100%",
-    height: "100%",
-  },
-  homePage: {
-    width: "100%",
-    height: "100%",
-    // backgroundColor: "rgba(0, 0, 0, 0.2)", // brilho da imagem
-    // backgroundColor: "rgba(0, 0, 0, 0.4)", // brilho da imagem
-
-    alignItems: "center",
-    justifyContent: "flex-start",
-    // borderRadius: 15,
-    overflow: "hidden",
-  },
-  homePageView: {
-    // backgroundColor: "rgba(0, 0, 0, 0.5)", // brilho da imagem
-    // borderRadius: 50,
-
-    // borderBottomLeftRadius: 50,
-    // borderBottomRightRadius: 50,
-
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
-  },
-  text: {
-    // color: "#BFA054",
-    fontSize: 50,
-    // fontFamily: "Roboto_500Medium",
-  },
-  homePageBooksGender: {
-    // flex: 1,
-    width: "95%",
-    marginTop: 20,
-    borderRadius: 10,
-    flexDirection: "column",
-    // backgroundColor: "rgba(0, 0, 0, 0.5)", // brilho da imagem
-    padding: 3,
-    justifyContent: "flex-start",
-    alignItems: "center",
-    overflow: "hidden",
-    // borderWidth: 2
-    // backgroundColor: "rgba(0, 0, 0, 0.5)", // brilho da imagem
-  },
-  homePageBooksTextGender: {
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
-  profilePageBooks: { flexDirection: "row", flex: 1 },
-  // Bookstext: { color: "#BFA054", fontSize: 30 },
-
-  homePageBookView: {
-    borderWidth: 1,
-    borderColor: "#f5efe1",
-    borderRadius: 10,
-    overflow: "hidden",
-    margin: 2,
-  },
-
-  homePageBook: {
-    width: 80,
-    height: 128,
-    // backgroundColor: "red",
-  },
-});
+}

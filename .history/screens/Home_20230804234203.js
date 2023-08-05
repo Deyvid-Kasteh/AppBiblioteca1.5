@@ -15,6 +15,7 @@ import {
 } from "react-native";
 import { BlurView } from "@react-native-community/blur";
 import { useEffect, useState } from "react";
+import { Ionicons } from "@expo/vector-icons";
 
 const Home = () => {
   const [resultadosLivrosFantasia, setResultadosLivrosFantasia] = useState();
@@ -73,7 +74,7 @@ const Home = () => {
 
 
         <View style={styles.homePage}>
-
+          
           <View style={styles.homePageBooksGender}>
             <View style={styles.homePageBooksTextGender}>
               <Text style={styles.Bookstext}>Fantasia</Text>
