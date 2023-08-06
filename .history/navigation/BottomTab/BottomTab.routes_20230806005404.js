@@ -58,7 +58,7 @@ export default function BottomTabRoutes() {
         name="Search"
         component={Search}
         options={{
-          title: "Buscar Livro",
+          title: "Biblioteca.",
           tabBarIcon: ({ color, size, focused }) => {
             if (focused) {
               return <Ionicons name="md-search" size={size} color={color} />;

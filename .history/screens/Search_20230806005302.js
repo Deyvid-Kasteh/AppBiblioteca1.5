@@ -1,5 +1,4 @@
-import {
-  Text,
+import { Text,
   ImageBackground,
   TextInput,
   View,
@@ -9,13 +8,12 @@ import {
   Button,
   Image,
   SafeAreaView,
-  TouchableOpacity,
-} from "react-native";
+  TouchableOpacity, } from 'react-native'
 import React, { useState } from 'react'
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 
-export default function Search({ navigation }) {
+export default function Search() {
   const [searchText, setSearchText] = useState("");
   const [resultadosLivros, setResultadosLivros] = useState("");
   const handleSeeBook = () => {
@@ -85,7 +83,7 @@ export default function Search({ navigation }) {
             placeholderTextColor="white"
             onChangeText={(newText) => setSearchText(newText)}
             defaultValue={searchText}
-            autoCapitalize="sentences"
+            autoCapitalize={true}
           />
           <TouchableOpacity
             onPress={handleSeeBook}
@@ -153,17 +151,6 @@ export default function Search({ navigation }) {
                         borderRadius: 10,
                         overflow: "hidden",
                         margin: 8,
-                      }}
-                      onPress={() => {
-                        navigation.navigate("HomeStackRoutes", {
-                          screen: "Book",
-                          params: {
-                            name: `${livro.volumeInfo.title}`,
-                            description: `${livro.volumeInfo.description}`,
-                            image: `${livro.volumeInfo.imageLinks.thumbnail}`,
-                          },
-                          // initial: false,
-                        });
                       }}
                     >
                       <Image

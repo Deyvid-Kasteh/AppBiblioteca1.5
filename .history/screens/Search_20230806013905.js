@@ -85,7 +85,7 @@ export default function Search({ navigation }) {
             placeholderTextColor="white"
             onChangeText={(newText) => setSearchText(newText)}
             defaultValue={searchText}
-            autoCapitalize="sentences"
+            // autoCapitalize={true}
           />
           <TouchableOpacity
             onPress={handleSeeBook}
@@ -162,7 +162,7 @@ export default function Search({ navigation }) {
                             description: `${livro.volumeInfo.description}`,
                             image: `${livro.volumeInfo.imageLinks.thumbnail}`,
                           },
-                          // initial: false,
+                          initial: false,
                         });
                       }}
                     >

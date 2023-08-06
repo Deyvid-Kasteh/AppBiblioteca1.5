@@ -162,7 +162,7 @@ export default function Search({ navigation }) {
                             description: `${livro.volumeInfo.description}`,
                             image: `${livro.volumeInfo.imageLinks.thumbnail}`,
                           },
-                          // initial: false,
+                          initial: false,
                         });
                       }}
                     >

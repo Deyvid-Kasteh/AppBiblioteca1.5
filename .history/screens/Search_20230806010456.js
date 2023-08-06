@@ -85,7 +85,7 @@ export default function Search({ navigation }) {
             placeholderTextColor="white"
             onChangeText={(newText) => setSearchText(newText)}
             defaultValue={searchText}
-            autoCapitalize="sentences"
+            autoCapitalize={true}
           />
           <TouchableOpacity
             onPress={handleSeeBook}
@@ -154,17 +154,7 @@ export default function Search({ navigation }) {
                         overflow: "hidden",
                         margin: 8,
                       }}
-                      onPress={() => {
-                        navigation.navigate("HomeStackRoutes", {
-                          screen: "Book",
-                          params: {
-                            name: `${livro.volumeInfo.title}`,
-                            description: `${livro.volumeInfo.description}`,
-                            image: `${livro.volumeInfo.imageLinks.thumbnail}`,
-                          },
-                          // initial: false,
-                        });
-                      }}
+                      
                     >
                       <Image
                         style={{
