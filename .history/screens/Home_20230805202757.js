@@ -15,10 +15,8 @@ import {
   Alert,
 } from "react-native";
 import { useEffect, useState } from "react";
-import { useNavigation } from "@react-navigation/native";
 
-
-const Home = ({ navigation: { navigate } }) => {
+const Home = () => {
   const [loadHomeBooks, setLoadHomeBooks] = useState(0);
   const [resultadosLivrosFantasia, setResultadosLivrosFantasia] = useState();
   const [resultadosLivrosFiccao, setResultadosLivrosFiccao] = useState();
@@ -75,7 +73,7 @@ const Home = ({ navigation: { navigate } }) => {
           {resultadosLivrosFantasia?.map((livro) => (
             <View key={livro.id}>
               {livro.volumeInfo.imageLinks ? (
-                <Pressable
+                <Pre
                   key={livro.id}
                   style={{
                     borderWidth: 1,
@@ -83,13 +81,6 @@ const Home = ({ navigation: { navigate } }) => {
                     borderRadius: 10,
                     overflow: "hidden",
                     margin: 2,
-                  }}
-                  onPress={() => {
-                    navigate("Book", {
-                      name: `${livro.volumeInfo.title}`,
-                      description: `${livro.volumeInfo.description}`,
-                      image: `${livro.volumeInfo.imageLinks.thumbnail}`,
-                    });
                   }}
                 >
                   <Image
@@ -101,7 +92,7 @@ const Home = ({ navigation: { navigate } }) => {
                       uri: `${livro.volumeInfo.imageLinks.thumbnail}`,
                     }}
                   />
-                </Pressable>
+                </Pre>
               ) : null}
             </View>
           ))}
@@ -175,7 +166,7 @@ const Home = ({ navigation: { navigate } }) => {
       </View>
       <Button
         title="Press me"
-        onPress={() => setLoadHomeBooks(loadHomeBooks + 1)}
+        onPress={() => setLoadHomeBooks(loadHomeBooks+1)}
       />
       <View>
         <Text>{loadHomeBooks}</Text>
@@ -193,6 +184,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     alignItems: "center",
+    justifyContent: "center",
   },
   homePageContainer: {
     flex: 1,

@@ -1,10 +1,10 @@
-import { Button, Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Button, Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 export default function Book({ navigation: { goBack }, route }) {
 
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
       <Text>Book teste</Text>
       <Image
         style={{

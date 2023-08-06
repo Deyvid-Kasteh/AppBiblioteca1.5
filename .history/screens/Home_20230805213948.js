@@ -19,6 +19,7 @@ import { useNavigation } from "@react-navigation/native";
 
 
 const Home = ({ navigation: { navigate } }) => {
+  const { navigate } = useNavigation();
   const [loadHomeBooks, setLoadHomeBooks] = useState(0);
   const [resultadosLivrosFantasia, setResultadosLivrosFantasia] = useState();
   const [resultadosLivrosFiccao, setResultadosLivrosFiccao] = useState();
@@ -85,11 +86,7 @@ const Home = ({ navigation: { navigate } }) => {
                     margin: 2,
                   }}
                   onPress={() => {
-                    navigate("Book", {
-                      name: `${livro.volumeInfo.title}`,
-                      description: `${livro.volumeInfo.description}`,
-                      image: `${livro.volumeInfo.imageLinks.thumbnail}`,
-                    });
+                    navigate("Book");
                   }}
                 >
                   <Image
@@ -193,6 +190,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     alignItems: "center",
+    justifyContent: "center",
   },
   homePageContainer: {
     flex: 1,

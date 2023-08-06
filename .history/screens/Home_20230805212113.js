@@ -18,7 +18,8 @@ import { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 
 
-const Home = ({ navigation: { navigate } }) => {
+const Home = ({ navigation }) => {
+  const { navigate } = useNavigation();
   const [loadHomeBooks, setLoadHomeBooks] = useState(0);
   const [resultadosLivrosFantasia, setResultadosLivrosFantasia] = useState();
   const [resultadosLivrosFiccao, setResultadosLivrosFiccao] = useState();
@@ -84,13 +85,7 @@ const Home = ({ navigation: { navigate } }) => {
                     overflow: "hidden",
                     margin: 2,
                   }}
-                  onPress={() => {
-                    navigate("Book", {
-                      name: `${livro.volumeInfo.title}`,
-                      description: `${livro.volumeInfo.description}`,
-                      image: `${livro.volumeInfo.imageLinks.thumbnail}`,
-                    });
-                  }}
+                  onPress={()=> {}}
                 >
                   <Image
                     style={{
@@ -175,7 +170,7 @@ const Home = ({ navigation: { navigate } }) => {
       </View>
       <Button
         title="Press me"
-        onPress={() => setLoadHomeBooks(loadHomeBooks + 1)}
+        onPress={() => setLoadHomeBooks(loadHomeBooks+1)}
       />
       <View>
         <Text>{loadHomeBooks}</Text>
@@ -193,6 +188,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     alignItems: "center",
+    justifyContent: "center",
   },
   homePageContainer: {
     flex: 1,

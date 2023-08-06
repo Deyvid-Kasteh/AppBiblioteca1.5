@@ -87,8 +87,7 @@ const Home = ({ navigation: { navigate } }) => {
                   onPress={() => {
                     navigate("Book", {
                       name: `${livro.volumeInfo.title}`,
-                      description: `${livro.volumeInfo.description}`,
-                      image: `${livro.volumeInfo.imageLinks.thumbnail}`,
+                      description: 
                     });
                   }}
                 >

@@ -4,7 +4,7 @@ import React from 'react'
 export default function Book({ navigation: { goBack }, route }) {
 
   return (
-    <ScrollView>
+    <ScrollView >
       <Text>Book teste</Text>
       <Image
         style={{

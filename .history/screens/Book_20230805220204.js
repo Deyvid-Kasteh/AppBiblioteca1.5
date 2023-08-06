@@ -1,25 +1,17 @@
-import { Button, Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Button, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 export default function Book({ navigation: { goBack }, route }) {
 
   return (
-    <ScrollView>
+    <View style={styles.container}>
       <Text>Book teste</Text>
-      <Image
-        style={{
-          width: 240,
-          height: 384,
-        }}
-        source={{
-          uri: `${route.params.image}`,
-        }}
-      />
       <Text>{route.params.name}</Text>
       <Text>{route.params.description}</Text>
+      {/* <Text>{route.params.image}</Text> */}
 
       <Button title="Voltar" onPress={() => goBack()} />
-    </ScrollView>
+    </View>
   );
 }
 

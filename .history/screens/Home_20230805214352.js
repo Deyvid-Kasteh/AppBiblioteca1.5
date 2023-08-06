@@ -85,11 +85,7 @@ const Home = ({ navigation: { navigate } }) => {
                     margin: 2,
                   }}
                   onPress={() => {
-                    navigate("Book", {
-                      name: `${livro.volumeInfo.title}`,
-                      description: `${livro.volumeInfo.description}`,
-                      image: `${livro.volumeInfo.imageLinks.thumbnail}`,
-                    });
+                    navigate("Book", { name: {id} });
                   }}
                 >
                   <Image
@@ -193,6 +189,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     alignItems: "center",
+    justifyContent: "center",
   },
   homePageContainer: {
     flex: 1,
