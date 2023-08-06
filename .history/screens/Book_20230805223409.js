@@ -23,7 +23,7 @@ export default function Book({ navigation: { goBack }, route }) {
           }}
         />
         <Text
-          numberOfLines={2}
+          numberOfLines={8}
           style={{
             fontSize: 40,
           }}

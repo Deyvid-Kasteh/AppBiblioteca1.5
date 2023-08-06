@@ -5,31 +5,19 @@ export default function Book({ navigation: { goBack }, route }) {
 
   return (
     <ScrollView>
-      <View
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          margin: 10,
-        }}
-      >
+      <Text>Book teste</Text>
+      <View>
         <Image
           style={{
             width: 240,
             height: 384,
-            marginBottom: 20,
+            alignSelf: "center",
           }}
           source={{
             uri: `${route.params.image}`,
           }}
         />
-        <Text
-          numberOfLines={2}
-          style={{
-            fontSize: 40,
-          }}
-        >
-          {route.params.name}
-        </Text>
+        <Text>{route.params.name}</Text>
         <Text numberOfLines={8}>{route.params.description}</Text>
       </View>
 
@@ -39,4 +27,9 @@ export default function Book({ navigation: { goBack }, route }) {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });

@@ -23,7 +23,11 @@ export default function Book({ navigation: { goBack }, route }) {
           }}
         />
         <Text
-          numberOfLines={2}
+          style={{
+            width: 240,
+            height: 384,
+            alignSelf: "center",
+          }}
           style={{
             fontSize: 40,
           }}

@@ -7,29 +7,24 @@ export default function Book({ navigation: { goBack }, route }) {
     <ScrollView>
       <View
         style={{
-          justifyContent: "center",
-          alignItems: "center",
-          margin: 10,
+          justifyContent: 'center',
+          alignItems: 'center',
+          margin: 10
         }}
       >
         <Image
           style={{
             width: 240,
             height: 384,
-            marginBottom: 20,
+            marginBottom: 20
           }}
           source={{
             uri: `${route.params.image}`,
           }}
         />
-        <Text
-          numberOfLines={2}
-          style={{
-            fontSize: 40,
-          }}
-        >
-          {route.params.name}
-        </Text>
+        <Text style={{
+          fo
+        }}>{route.params.name}</Text>
         <Text numberOfLines={8}>{route.params.description}</Text>
       </View>
 

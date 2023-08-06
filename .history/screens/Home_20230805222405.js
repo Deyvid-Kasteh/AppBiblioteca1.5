@@ -164,13 +164,6 @@ const Home = ({ navigation: { navigate } }) => {
                     overflow: "hidden",
                     margin: 2,
                   }}
-                  onPress={() => {
-                    navigate("Book", {
-                      name: `${livro.volumeInfo.title}`,
-                      description: `${livro.volumeInfo.description}`,
-                      image: `${livro.volumeInfo.imageLinks.thumbnail}`,
-                    });
-                  }}
                 >
                   <Image
                     style={{
