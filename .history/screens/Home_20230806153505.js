@@ -23,11 +23,9 @@ const Home = ({ navigation: { navigate } }) => {
   const [resultadosLivrosFantasia, setResultadosLivrosFantasia] = useState();
   const [resultadosLivrosFiccao, setResultadosLivrosFiccao] = useState();
   const [resultadosLivrosRomance, setResultadosLivrosRomance] = useState();
-  const [resultadosLivrosGregos, setResultadosLivrosGregos] = useState();
   const nomeDoLivroFantasia = "o castelo animado";
   const nomeDeAutorFiccao = "alienista";
   const nomeDaObraRomance = "a megera";
-  const nomeDaObraGrecia = "termopilas"
 
   useEffect(() => {
     fetch(
@@ -41,7 +39,7 @@ const Home = ({ navigation: { navigate } }) => {
     )
       .then((resp) => resp.json())
       .then((data) => setResultadosLivrosFantasia(data.items))
-    .then(console.log("fetch fantasia"))
+    .then(console.log("fetch 1"))
 
     fetch(
       `https://www.googleapis.com/books/v1/volumes?q=${nomeDeAutorFiccao}&maxResults=10`,
@@ -54,7 +52,7 @@ const Home = ({ navigation: { navigate } }) => {
     )
       .then((resp) => resp.json())
       .then((data) => setResultadosLivrosFiccao(data.items))
-      .then(console.log("fetch ficcao"));
+      .then(console.log("fetch 2"));
 
 
     fetch(
@@ -68,20 +66,7 @@ const Home = ({ navigation: { navigate } }) => {
     )
       .then((resp) => resp.json())
       .then((data) => setResultadosLivrosRomance(data.items))
-      .then(console.log("fetch romance"));
-
-    fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${nomeDaObraGrecia}&maxResults=10`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
-      .then((resp) => resp.json())
-      .then((data) => setResultadosLivrosGregos(data.items))
-      .then(console.log("fetch termopilas"));
+      .then(console.log("fetch 3"));
 
   }, []);
 
@@ -207,18 +192,18 @@ const Home = ({ navigation: { navigate } }) => {
           ))}
         </ScrollView>
       </View>
+      {/* VIEW DE TESTES */}
 
-      {/* VIEW DE TESTES ----------------------------------------------------- VIEW DE TESTES */}
-      {/* VIEW DE TESTES ----------------------------------------------------- VIEW DE TESTES */}
-      {/* VIEW DE TESTES ----------------------------------------------------- VIEW DE TESTES */}
-      {/* VIEW DE TESTES ----------------------------------------------------- VIEW DE TESTES */}
 
+
+
+      
       <View style={styles.homePageBooksGender}>
         <View style={styles.homePageBooksTextGender}>
-          <Text style={styles.Bookstext}>Grécia</Text>
+          <Text style={styles.Bookstext}>Romances</Text>
         </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          {resultadosLivrosGregos?.map((livro) => (
+          {resultadosLivrosRomance?.map((livro) => (
             <View key={livro.id}>
               {livro.volumeInfo.imageLinks ? (
                 <TouchableOpacity

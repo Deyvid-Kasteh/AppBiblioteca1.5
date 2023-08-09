@@ -5,7 +5,7 @@ const Favorites = () => {
   return (
     <View>
       <Text>Favorites</Text>
-      {/* <GoogleSigninButtonComponent /> */}
+      <GoogleSigninButtonComponent />
     </View>
   );
 }

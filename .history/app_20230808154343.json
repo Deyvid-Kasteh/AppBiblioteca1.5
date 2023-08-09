@@ -14,26 +14,14 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "package": "com.auth.AppBiblioteca",
-      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.auth.AppBiblioteca",
-      "googleServicesFile": "./google-services.json"
+      "package": "com.auth.AppBiblioteca"
     },
-    "web": {
-      "bundler": "metro",
-      "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "024b6fef-9aab-443a-a5a7-45e9bb5435ed"
-      }
-    },
-    "plugins": ["@react-native-google-signin/google-signin"]
+    "web": { "bundler": "metro", "favicon": "./assets/favicon.png" }
   }
 }

@@ -81,7 +81,7 @@ const Home = ({ navigation: { navigate } }) => {
     )
       .then((resp) => resp.json())
       .then((data) => setResultadosLivrosGregos(data.items))
-      .then(console.log("fetch termopilas"));
+      .then(console.log("fetch 4"));
 
   }, []);
 
@@ -218,7 +218,7 @@ const Home = ({ navigation: { navigate } }) => {
           <Text style={styles.Bookstext}>Grécia</Text>
         </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          {resultadosLivrosGregos?.map((livro) => (
+          {resultadosLivrosRomance?.map((livro) => (
             <View key={livro.id}>
               {livro.volumeInfo.imageLinks ? (
                 <TouchableOpacity

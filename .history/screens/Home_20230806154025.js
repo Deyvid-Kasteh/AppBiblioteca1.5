@@ -218,7 +218,7 @@ const Home = ({ navigation: { navigate } }) => {
           <Text style={styles.Bookstext}>Grécia</Text>
         </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          {resultadosLivrosGregos?.map((livro) => (
+          {resultadosLivrosRomance?.map((livro) => (
             <View key={livro.id}>
               {livro.volumeInfo.imageLinks ? (
                 <TouchableOpacity

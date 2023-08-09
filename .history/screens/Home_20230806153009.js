@@ -23,11 +23,9 @@ const Home = ({ navigation: { navigate } }) => {
   const [resultadosLivrosFantasia, setResultadosLivrosFantasia] = useState();
   const [resultadosLivrosFiccao, setResultadosLivrosFiccao] = useState();
   const [resultadosLivrosRomance, setResultadosLivrosRomance] = useState();
-  const [resultadosLivrosGregos, setResultadosLivrosGregos] = useState();
   const nomeDoLivroFantasia = "o castelo animado";
   const nomeDeAutorFiccao = "alienista";
   const nomeDaObraRomance = "a megera";
-  const nomeDaObraGrecia = "termopilas"
 
   useEffect(() => {
     fetch(
@@ -41,7 +39,7 @@ const Home = ({ navigation: { navigate } }) => {
     )
       .then((resp) => resp.json())
       .then((data) => setResultadosLivrosFantasia(data.items))
-    .then(console.log("fetch fantasia"))
+    .then(console.log(1))
 
     fetch(
       `https://www.googleapis.com/books/v1/volumes?q=${nomeDeAutorFiccao}&maxResults=10`,
@@ -54,7 +52,7 @@ const Home = ({ navigation: { navigate } }) => {
     )
       .then((resp) => resp.json())
       .then((data) => setResultadosLivrosFiccao(data.items))
-      .then(console.log("fetch ficcao"));
+      .then(console.log(1));
 
 
     fetch(
@@ -68,20 +66,7 @@ const Home = ({ navigation: { navigate } }) => {
     )
       .then((resp) => resp.json())
       .then((data) => setResultadosLivrosRomance(data.items))
-      .then(console.log("fetch romance"));
-
-    fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${nomeDaObraGrecia}&maxResults=10`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
-      .then((resp) => resp.json())
-      .then((data) => setResultadosLivrosGregos(data.items))
-      .then(console.log("fetch termopilas"));
+      .then(console.log(1));
 
   }, []);
 
@@ -173,52 +158,6 @@ const Home = ({ navigation: { navigate } }) => {
         </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {resultadosLivrosRomance?.map((livro) => (
-            <View key={livro.id}>
-              {livro.volumeInfo.imageLinks ? (
-                <TouchableOpacity
-                  key={livro.id}
-                  style={{
-                    borderWidth: 1,
-                    borderColor: "#f5efe1",
-                    borderRadius: 10,
-                    overflow: "hidden",
-                    margin: 2,
-                  }}
-                  onPress={() => {
-                    navigate("Book", {
-                      name: `${livro.volumeInfo.title}`,
-                      description: `${livro.volumeInfo.description}`,
-                      image: `${livro.volumeInfo.imageLinks.thumbnail}`,
-                    });
-                  }}
-                >
-                  <Image
-                    style={{
-                      width: 80,
-                      height: 128,
-                    }}
-                    source={{
-                      uri: `${livro.volumeInfo.imageLinks.thumbnail}`,
-                    }}
-                  />
-                </TouchableOpacity>
-              ) : null}
-            </View>
-          ))}
-        </ScrollView>
-      </View>
-
-      {/* VIEW DE TESTES ----------------------------------------------------- VIEW DE TESTES */}
-      {/* VIEW DE TESTES ----------------------------------------------------- VIEW DE TESTES */}
-      {/* VIEW DE TESTES ----------------------------------------------------- VIEW DE TESTES */}
-      {/* VIEW DE TESTES ----------------------------------------------------- VIEW DE TESTES */}
-
-      <View style={styles.homePageBooksGender}>
-        <View style={styles.homePageBooksTextGender}>
-          <Text style={styles.Bookstext}>Grécia</Text>
-        </View>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          {resultadosLivrosGregos?.map((livro) => (
             <View key={livro.id}>
               {livro.volumeInfo.imageLinks ? (
                 <TouchableOpacity
